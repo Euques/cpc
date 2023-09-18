@@ -242,7 +242,7 @@
 
       firebase
         .database()
-        .ref('blacksheep/promo/')
+        .ref('pcp/promo/')
         .orderByChild('apelido')
         //.equalTo(true)
         .once('child_added', snapshot => {
@@ -259,7 +259,7 @@
 
           firebase
             .database()
-            .ref(`/blacksheep/${pegaA}/listas/${resultado.apelido}`)
+            .ref(`/pcp/${pegaA}/listas/${resultado.apelido}`)
             .orderByChild('nome')
             .once('value', nome => {
               let resultado2 = nome.val()
@@ -268,7 +268,7 @@
 
               firebase
                 .database()
-                .ref(`/blacksheep/${pegaA}/listas/geral/ausentes`)
+                .ref(`/pcp/${pegaA}/listas/geral/ausentes`)
                 .orderByChild('promoter')
                 .equalTo(`${resultado.apelido}`)
                 .once('value', total => {
@@ -291,9 +291,9 @@
         } class="foto" ></div> <div class="conteudo"> <p class="pApelido"><b>  ${resultado.apelido.toUpperCase()} </b>${ativado}</p> <p class="pNome"> ${
                       resultado.nome
                     } </p> <p class="pConvidado"> <b>${conta}</b> de ${conta2} convidados</p><p class="pSaldo"> Saldo: R$<b> ${f} </b></p> </div>
-            <div class="url"><a href="${parentURL}?p=blacksheep/promo/${chave}" target="_top" class="pBtn"><i class="material-symbols-rounded">
+            <div class="url"><a href="${parentURL}?p=pcp/promo/${chave}" target="_top" class="pBtn"><i class="material-symbols-rounded">
 format_list_numbered
-</i></a> <a href="${parentURL}?p=blacksheep/promo/${chave}#promoter582" target="_top" class="pBtn"><i class="material-symbols-rounded">
+</i></a> <a href="${parentURL}?p=pcp/promo/${chave}#promoter582" target="_top" class="pBtn"><i class="material-symbols-rounded">
     paid
 </i></a></div>
             </li>` + dadosMostraRegras
