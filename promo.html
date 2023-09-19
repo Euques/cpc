@@ -409,7 +409,7 @@ var parentURL = window != window.parent ? document.referrer : null;
 
                         firebase
                             .database()
-                            .ref('blacksheep/promo')
+                            .ref('pcp/promo')
                             .push(
 
                                 {
@@ -428,10 +428,10 @@ var parentURL = window != window.parent ? document.referrer : null;
 
 
                                 const base64 = avatar.src.split('base64,')[1]
-                                firebase.storage().ref(`blacksheep/promo${anoAtual}/${snap.key}.png`).putString(base64, 'base64', { contentType: 'image/png' }).then(snapshot => {
+                                firebase.storage().ref(`pcp/promo${anoAtual}/${snap.key}.png`).putString(base64, 'base64', { contentType: 'image/png' }).then(snapshot => {
                                     console.log('snapshot', snapshot)
 
-                                    firebase.storage().ref(`blacksheep/promo${anoAtual}/${snap.key}.png`).getDownloadURL().then(url => {
+                                    firebase.storage().ref(`pcp/promo${anoAtual}/${snap.key}.png`).getDownloadURL().then(url => {
                                         console.log('endereço', url)
 
 
@@ -441,7 +441,7 @@ var parentURL = window != window.parent ? document.referrer : null;
                                         var whats = document.getElementById('whats').value
 
                                         firebase.database()
-                                            .ref(`blacksheep/promo/${snap.key}`)
+                                            .ref(`pcp/promo/${snap.key}`)
                                             .set(
 
                                                 {
